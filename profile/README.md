@@ -43,8 +43,9 @@ Supporting infrastructure:
 - Artifact Store
 - Logging / Metrics / Tracing
 ```
-Topology:
+Topology
 
+```mermaid
 flowchart TD
     U[User / Workplace Consultant] --> UI[Web UI]
     UI --> BFF[BFF / UI Backend]
@@ -59,6 +60,7 @@ flowchart TD
     PS --> OBS[Logs / Metrics / Traces]
     MCP --> OBS
     BFF --> OBS
+```
 
 ---
 

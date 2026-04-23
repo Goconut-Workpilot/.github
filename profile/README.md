@@ -43,6 +43,22 @@ Supporting infrastructure:
 - Artifact Store
 - Logging / Metrics / Tracing
 ```
+Topology:
+
+flowchart TD
+    U[User / Workplace Consultant] --> UI[Web UI]
+    UI --> BFF[BFF / UI Backend]
+    BFF --> PS[Pipeline Service]
+    PS --> MCP[MCP Service]
+    MCP --> EXT[goconut GraphQL / external systems]
+
+    PS --> DB[(Run Metadata Store)]
+    PS --> ART[(Artifact Store)]
+
+    BFF --> AUTH[Identity / Auth]
+    PS --> OBS[Logs / Metrics / Traces]
+    MCP --> OBS
+    BFF --> OBS
 
 ---
 
